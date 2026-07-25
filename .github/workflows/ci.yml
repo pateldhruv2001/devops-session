@@ -3,8 +3,21 @@ name: CI
 on:
   push:
     branches: [main]
+    paths:
+      - "app.py"
+      - "test_app.py"
+      - "requirements.txt"
+      - "Dockerfile"
+      - ".github/workflows/ci.yml"
   pull_request:
     branches: [main]
+    paths:
+      - "app.py"
+      - "test_app.py"
+      - "requirements.txt"
+      - "Dockerfile"
+      - ".github/workflows/ci.yml"
+  workflow_dispatch:
 
 jobs:
   test:
