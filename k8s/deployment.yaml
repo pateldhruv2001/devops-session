@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-session-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devops-session-app
+  template:
+    metadata:
+      labels:
+        app: devops-session-app
+    spec:
+      containers:
+        - name: devops-session-app
+          image: devops-session-app:manual
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
