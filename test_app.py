@@ -6,6 +6,7 @@ def test_hello():
     response = client.get("/")
     assert response.status_code == 200
     assert b"Hello DevOps" in response.data
+    assert 1 == 2  # intentional break for the live demo
 
 
 def test_health():
